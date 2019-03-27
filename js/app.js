@@ -8,6 +8,8 @@ class Ship {
 }
 
 const hero = new Ship(20, 5, .7)
+
+
 const alienFactory = {
 	aliens: [],
 	generateShip(){
@@ -21,6 +23,59 @@ const alienFactory = {
 	}
 
 }
-console.log(alienFactory.generateShip())
-console.log(aliens);
+for (let i = 0; i < 6 ; i++) {
+	alienFactory.generateShip()
+}
+console.log(alienFactory.aliens);
+
+
+
+//our ship firing on 1st array ship
+const attack =  () => {
+	alienFactory.aliens[0].hull -= hero.firepower;
+	return alienFactory.aliens[0].hull;
+	// body...
+}
+
+console.log(attack());
+
+
+
+
+
+
+//for (var i = 0; i < ; i++) {
+//	if (hull <= 0){
+//		remove ship
+//}
+//
+//
+//
+//	else	
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
