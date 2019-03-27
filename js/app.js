@@ -32,27 +32,21 @@ console.log(alienFactory.aliens);
 
 //our ship firing on 1st array ship
 const attack =  () => {
-	alienFactory.aliens[0].hull -= hero.firepower;
-	return alienFactory.aliens[0].hull;
-	// body...
+	while(hero.hull > 0){
+		alienFactory.aliens[0].hull -= hero.firepower;
+		if(alienFactory.aliens[0].hull <= 0){
+			alienFactory.aliens.splice(0, 1);
+			console.log("Alien ship destroyed!")
+			break
+		} else {
+			hero.hull -= alienFactory.aliens[0].firepower;
+		}
+	}
+	return `Your hull is at ${hero.hull}. ${alienFactory.aliens.length} alien ships remain.`;
 }
 
 console.log(attack());
 
-
-
-
-
-
-//for (var i = 0; i < ; i++) {
-//	if (hull <= 0){
-//		remove ship
-//}
-//
-//
-//
-//	else	
-// }
 
 
 
